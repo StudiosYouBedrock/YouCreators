@@ -348,7 +348,7 @@ input {
     .TitleBl {
         position: absolute;
         top: 60px;
-        left: 25px;
+        left: 5px;
         transform: scale( 0.9);
     }
     .result {
