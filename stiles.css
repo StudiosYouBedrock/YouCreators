@@ -349,9 +349,12 @@ input {
         position: absolute;
         top: 60px;
         left: 25px;
-        transform: scale( 1.1);
+        transform: scale( 0.9);
     }
     .result {
+        margin: 1px;
+        margin-top: 5px;
+        margin-block-end: 100px;
         width: 420px;
         top: 120px;
         left: 10px;
@@ -367,10 +370,12 @@ input {
         border-radius: 50px;
     }
     .generator {
+        margin-top: 5px;
         top: 540px;
         left: 20px;
     }
     .export {
+        margin-top: 5px;
         top: 540px;
         left: 170px;
     }
