@@ -338,11 +338,10 @@ input {
     scroll-behavior: auto;
     scroll-behavior: smooth;
 }
-
 @media(max-width: 600px) {
     .data {
         width: 400px;
-        top: 120px;
+        top: 620px;
         left: 20px;
     }
     .TitleBl {
@@ -353,7 +352,7 @@ input {
     }
     .result {
         width: 420px;
-        top: 1050px;
+        top: 120px;
         left: 10px;
     }
     .eventList {
@@ -367,11 +366,11 @@ input {
         border-radius: 50px;
     }
     .generator {
-        top: 1490px;
+        top: 540px;
         left: 20px;
     }
     .export {
-        top: 1490px;
+        top: 540px;
         left: 170px;
     }
 }
