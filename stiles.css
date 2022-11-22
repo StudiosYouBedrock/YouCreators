@@ -1,0 +1,377 @@
+/*Menu-------------------------------------------------------------------------------------*/
+
+html {
+    scroll-behavior: inherit;
+    scroll-behavior: initial;
+    scroll-behavior: unset;
+}
+
+input {
+    border: 1px solid #070707;
+    outline: none;
+}
+
+.Inicio {
+    align-self: flex-start;
+}
+
+.Inicio {
+    font-family: normal-minecraft;
+    position: absolute;
+    left: 40px;
+    top: 100px;
+    color: aliceblue;
+    transform: scale(1.2);
+}
+
+.ManifestGenerator {
+    font-family: normal-minecraft;
+    position: absolute;
+    left: 40px;
+    top: 140px;
+    color: aliceblue;
+    transform: scale(1.2);
+}
+
+.GeneratorBlockCode {
+    font-family: normal-minecraft;
+    position: absolute;
+    left: 40px;
+    top: 180px;
+    color: aliceblue;
+    transform: scale(1.2);
+}
+
+.menue {
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    height: 460px;
+    background-color: #11121B;
+    border-radius: 10px;
+    box-shadow: 0px 0px 38px 29px #131520;
+}
+
+.buttonPosition {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.lbl-menu {
+    width: 90px;
+    height: 80px;
+    position: relative;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.lbl-menu #spn1,
+#spn2,
+#spn3 {
+    position: absolute;
+    content: '';
+    background: #ffff;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 400ms ease;
+    box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.25);
+}
+
+#spn1 {
+    top: 0px;
+}
+
+#spn2 {
+    top: 12px;
+}
+
+#spn3 {
+    top: 23px;
+}
+
+#btn-menu {
+    display: none;
+}
+
+#btn-menu:checked~.lbl-menu #spn1 {
+    transform: rotate(140deg);
+    top: 10px;
+}
+
+#btn-menu:checked~.lbl-menu #spn2 {
+    opacity: 0;
+}
+
+#btn-menu:checked~.lbl-menu #spn3 {
+    transform: rotate(-140deg);
+    top: 10px;
+}
+
+
+/*_______________________________________-_-__*/
+
+.TitleBl {
+    position: absolute;
+    top: 20px;
+    left: 440px;
+    transform: scale( 1.7);
+}
+
+
+/*Data----------------------------------------------------------------*/
+
+.data {
+    position: relative;
+    width: 590px;
+    left: 60px;
+    top: 150px;
+}
+
+.data>div {
+    padding: 10px;
+}
+
+.a1,
+.a2 {
+    position: relative;
+    left: -55px;
+    transform: scale(0.8);
+}
+
+.check1 {
+    color: #17cd07;
+    font-style: normal;
+}
+
+.check2 {
+    border: #11121B;
+    color: #e0ffde;
+    font-style: normal;
+}
+
+.MenuAdd {
+    position: relative;
+    text-align: center;
+    top: 300px;
+}
+
+.MenuAdd>h1 {
+    position: relative;
+    text-align: center;
+    top: -270px;
+}
+
+.MenuAdd>button {
+    position: relative;
+    top: -230px;
+    left: -0%;
+    border-top: #63ff55, 100px;
+    background: #24a700;
+    border-color: #17cd07;
+    color: #ffffff;
+    border-radius: 5%;
+    padding: 12px;
+    box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);
+}
+
+.MenuAdd>button:hover {
+    color: #11121B;
+    background: #37ff00;
+    box-shadow: 0px 0px 18px 5px rgba(85, 255, 0, 0.434);
+}
+
+.MenuAdd2>button {
+    position: relative;
+    top: -190px;
+    left: -0%;
+    border-top: #63ff55, 100px;
+    background: #24a700;
+    border-color: #17cd07;
+    color: #ffffff;
+    border-radius: 5%;
+    padding: 12px;
+    box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);
+}
+
+.MenuAdd2>button:hover {
+    color: #11121B;
+    background: #37ff00;
+    box-shadow: 0px 0px 18px 5px rgba(85, 255, 0, 0.434);
+}
+
+.exit {
+    background-color: #11121B;
+    width: 10%;
+    position: absolute;
+    top: -250px;
+    left: 100px;
+    box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.25);
+}
+
+.exit:hover {
+    background-color: aliceblue;
+    color: #11121B;
+    box-shadow: 0px 0px 18px 5px rgba(255, 255, 255, 0.25);
+}
+
+.ListsAdd {
+    position: relative;
+    top: -100px;
+}
+
+.eventList {
+    padding: 10px;
+}
+
+.eventList>div {
+    background-color: #11121B;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.dataNameEff1 {
+    border-radius: 30px;
+}
+
+.generator {
+    top: 550px;
+    left: 660px;
+}
+
+.export {
+    top: 550px;
+    left: 800px;
+    border-top: #63ff55, 10px;
+    background: #24a700;
+    border-color: #17cd07;
+    border-width: 5px;
+    color: #ffffff;
+    transition: transform .2s;
+    padding: 16px 20px;
+    border-radius: -2px;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-family: 'normal-minecraft';
+    box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);
+}
+
+.export:hover {
+    color: rgb(22, 61, 0);
+    transform: scale(1.3);
+    box-shadow: 0px 0px 18px 5px rgba(85, 255, 0, 0.434);
+}
+
+.export:after {
+    content: "";
+    background: #55ff00;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+
+.export:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+}
+
+.generator {
+    top: 550px;
+    left: 660px;
+    border-top: #63ff55, 10px;
+    background: #24a700;
+    border-color: #17cd07;
+    border-width: 5px;
+    color: #ffffff;
+    transition: transform .2s;
+    padding: 16px 20px;
+    border-radius: -2px;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-family: 'normal-minecraft';
+    box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);
+}
+
+.generator:hover {
+    color: rgb(22, 61, 0);
+    transform: scale(1.3);
+    box-shadow: 0px 0px 18px 5px rgba(85, 255, 0, 0.434);
+}
+
+.generator::after {
+    content: "";
+    background: #55ff00;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+
+.generator:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+}
+
+.result {
+    position: absolute;
+    font-family: normal-minecraft;
+    top: 130px;
+    left: 650px;
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+}
+
+@media(max-width: 600px) {
+    .data {
+        width: 400px;
+        top: 120px;
+        left: 20px;
+    }
+    .TitleBl {
+        position: absolute;
+        top: 60px;
+        left: 25px;
+        transform: scale( 1.1);
+    }
+    .result {
+        width: 420px;
+        top: 1050px;
+        left: 10px;
+    }
+    .eventList {
+        padding: 1px;
+        transform: scale(0.8);
+    }
+    .eventList>div {
+        background-color: #11121B;
+        padding: 1px;
+        width: 370px;
+        border-radius: 50px;
+    }
+    .generator {
+        top: 1490px;
+        left: 20px;
+    }
+    .export {
+        top: 1490px;
+        left: 170px;
+    }
+}

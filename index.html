@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/GeneratorBlockCode/stiles.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="icon.png">
+    <title>BlockGeneratorV1</title>
+</head>
+
+<body>
+
+    <div id="index">
+
+        <h1 class="TitleBl">Block Generator (v1)</h1>
+        <button class="generator " onclick="dat() ">Generate</button>
+        <button id="exportar" class="export">Export</button>
+        <div><textarea id="Result" class="result " cols="60 " rows="20 " readonly placeholder="dataBlock "></textarea></div>
+        <a class="menuImg"></a>
+
+
+        <a id="Inicio " class="Inicio " style="display: none; ">Inicio</a>
+        <a class="ManifestGenerator " style="display: none; ">Manifest Generator</a>
+        <a class="GeneratorBlockCode " style="display: none; ">Generator Block Code</a>
+        <div class="data">
+            <div class="FormtVer"> <a>Format Version</a> <select id="FormtVer"> <option value="1.16.100">1.16.100 !!Recommended!!</option> </select> </div>
+            <div class="nameBlockdat"> <input id="idBlockdat" class="idBlockdat" type="text" placeholder="namespace" style="width:90px;"> <a>:</a> <input id="nameBlock" type=" text " placeholder="identifier"> </div>
+            <div class="Exprimental "> <a>Is Experimental</a> <select id="Experimental"> <option selected value="false ">False</option> <option value="true ">True</option> </select> </div>
+            <div class="Iventory"> <a> Register To Creative Menu </a> <button type="submit" class="checkIventButton" onclick="checkIvent()"> <a class="checkIvent1" id="checkIvent1" style="display:none;color: #17cd07;box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);">✔</a > <a class = "checkIvent2 "id = "checkIvent2" > █ </a> </button > </div>
+            <div class="componentsLoot" id="components1"> <a>Loot:</a> <input id="loots" type="text " placeholder="loot_tables/blocks/blocky.json " style="width:300px; "> </div>
+            <div class="componentsTime" id="components2"> <a>Destroy Time:</a> <input id="Time" type="text " placeholder="1.0 " maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
+            <div class="componentsExplosive" id="components3"> <a>Explosion Resistance:</a> <input id="Explosive" type="text " placeholder="4" maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
+            <div class="mapColor" id="components4"> <a style="top: 315px;">Map Color:</a> <input id="mapColor" value="#FFFFFF" type="color"> </div>
+<div><div class="friction" id="components5"> <a>Friction</a> <input id="friction" type="text" placeholder="0.6" maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div><div class="a1" id="components6"> <a>Friction is the speed of walking on the block</a> </div><div class="a2" id="components7"> <a>0.6 in like a normal block you can play a bit with this option</a> </div></div>
+            <div class="componentsAbsorption"id="components8"> <a>Light Absorption:</a> <input id="Absorption" type="text " placeholder="0" maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
+            <div class="componentsEmission "id="components9"> <a>Light Emission:</a> <input id="Emission" type="text" placeholder="0" maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
+<div>
+    <div class="flamabble" id="components10"> <a>Flamabble</a> <button type="submit" class="checkButton" onclick="checkFlamebble()"> <a class="check1 " id="check1" style="display:none;    box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);">✔</a> <a class="check2 " id="check2">█</a> </button>                </div>
+            <div class="flamabbleData" id="flamabbleData" style="display:none;">
+                <div> <a>Flame Odds</a> <input id="FlameOddos" type="text " placeholder="1" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+                <div> <a>Burn Odds</a> <input id="BurnOddos" type="text " placeholder="1" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            </div>
+        </div>
+        <div class="EventsCheck" id="EventsCheck"> <a>Events</a> <button type="submit" class="checkButton" onclick="checkEvents()"> <a class="check1Ev" id="check1Ev" style="display:none; color: #17cd07;    box-shadow: 0px 0px 18px 5px rgba(36, 255, 0, 0.25);">✔</a> <a class="check2Ev" id="check2Ev">█</a> </button>            </div>
+
+        <div class="Events" id="Events" style="display: none;"><button onclick="MenuAddE1()">Add Event</button>
+            <div class="eventList" id="eventList">
+
+                <div id="eventListEff1dat" style="display: none;"> <a>Name Event1:</a> <input type="text" id="dataNameEff1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ff22 ;"> <button onclick="xpressEff1()">X</button> </div>
+                <div id="eventListEff2dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameEff2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ff22 ;"> <button onclick="xpressEff2()">X</button> </div>
+                <div id="eventListEff3dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameEff3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ff22 ;"> <button onclick="xpressEff3()">X</button> </div>
+                <div id="eventListEff4dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameEff4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ff22 ;"> <button onclick="xpressEff4()">X</button> </div>
+                <div id="eventListEff5dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameEff5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ff22 ;"> <button onclick="xpressEff5()">X</button> </div>
+
+
+
+                <div id="eventListRemoveAddMobEffect1dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRemoveAddMobEffect1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff6200"> <button onclick="xpressRemoveAddMobEffect1()">X</button> </div>
+                <div id="eventListRemoveAddMobEffect2dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRemoveAddMobEffect2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff6200"> <button onclick="xpressRemoveAddMobEffect2()">X</button> </div>
+                <div id="eventListRemoveAddMobEffect3dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRemoveAddMobEffect3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff6200"> <button onclick="xpressRemoveAddMobEffect3()">X</button> </div>
+                <div id="eventListRemoveAddMobEffect4dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRemoveAddMobEffect4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff6200"> <button onclick="xpressRemoveAddMobEffect4()">X</button> </div>
+                <div id="eventListRemoveAddMobEffect5dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRemoveAddMobEffect5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff6200"> <button onclick="xpressRemoveAddMobEffect5()">X</button> </div>
+
+
+                <div id="eventListSpawnLoot1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSpawLoot1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#fbff00"> <button onclick="xpressSpawLoot1()">X</button> </div>
+                <div id="eventListSpawnLoot2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSpawLoot2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#fbff00"> <button onclick="xpressSpawLoot2()">X</button> </div>
+                <div id="eventListSpawnLoot3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSpawLoot3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#fbff00"> <button onclick="xpressSpawLoot3()">X</button> </div>
+                <div id="eventListSpawnLoot4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSpawLoot4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#fbff00"> <button onclick="xpressSpawLoot4()">X</button> </div>
+                <div id="eventListSpawnLoot5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSpawLoot5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#fbff00"> <button onclick="xpressSpawLoot5()">X</button> </div>
+
+                <div id="eventListSetBlock1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSetBlock1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ffc3 ;"> <button onclick="xpressSetBlock1()">X</button> </div>
+                <div id="eventListSetBlock2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSetBlock2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ffc3 ;"> <button onclick="xpressSetBlock2()">X</button> </div>
+                <div id="eventListSetBlock3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSetBlock3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ffc3 ;"> <button onclick="xpressSetBlock3()">X</button> </div>
+                <div id="eventListSetBlock4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSetBlock4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ffc3 ;"> <button onclick="xpressSetBlock4()">X</button> </div>
+                <div id="eventListSetBlock5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameSetBlock5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00ffc3 ;"> <button onclick="xpressSetBlock5()">X</button> </div>
+
+                <div id="eventListRunCommand1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRunCommand1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff00ff"> <button onclick="xpressRunCommand1()">X</button> </div>
+                <div id="eventListRunCommand2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRunCommand2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff00ff"> <button onclick="xpressRunCommand2()">X</button> </div>
+                <div id="eventListRunCommand3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRunCommand3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff00ff"> <button onclick="xpressRunCommand3()">X</button> </div>
+                <div id="eventListRunCommand4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRunCommand4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff00ff"> <button onclick="xpressRunCommand4()">X</button> </div>
+                <div id="eventListRunCommand5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameRunCommand5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#ff00ff"> <button onclick="xpressRunCommand5()">X</button> </div>
+
+                <div id="eventListdamage1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamedamage1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#e70b0b"> <button onclick="xpressdamage1()">X</button> </div>
+                <div id="eventListdamage2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamedamage2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#e70b0b"> <button onclick="xpressdamage2()">X</button> </div>
+                <div id="eventListdamage3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamedamage3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#e70b0b"> <button onclick="xpressdamage3()">X</button> </div>
+                <div id="eventListdamage4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamedamage4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#e70b0b"> <button onclick="xpressdamage4()">X</button> </div>
+                <div id="eventListdamage5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamedamage5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#e70b0b"> <button onclick="xpressdamage5()">X</button> </div>
+
+                <div id="eventListDecrementStack1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameDecrementStack1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00b7ff"> <button onclick="xpressDecrementStack1()">X</button> </div>
+                <div id="eventListDecrementStack2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameDecrementStack2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00b7ff"> <button onclick="xpressDecrementStack2()">X</button> </div>
+                <div id="eventListDecrementStack3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameDecrementStack3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00b7ff"> <button onclick="xpressDecrementStack3()">X</button> </div>
+                <div id="eventListDecrementStack4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameDecrementStack4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00b7ff"> <button onclick="xpressDecrementStack4()">X</button> </div>
+                <div id="eventListDecrementStack5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNameDecrementStack5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#00b7ff"> <button onclick="xpressDecrementStack5()">X</button> </div>
+
+                <div id="eventListPlayEffect1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlayEffect1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#9500ff"> <button onclick="xpressPlayEffect1()">X</button> </div>
+                <div id="eventListPlayEffect2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlayEffect2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#9500ff"> <button onclick="xpressPlayEffect2()">X</button> </div>
+                <div id="eventListPlayEffect3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlayEffect3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#9500ff"> <button onclick="xpressPlayEffect3()">X</button> </div>
+                <div id="eventListPlayEffect4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlayEffect4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#9500ff"> <button onclick="xpressPlayEffect4()">X</button> </div>
+                <div id="eventListPlayEffect5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlayEffect5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#9500ff"> <button onclick="xpressPlayEffect5()">X</button> </div>
+
+                <div id="eventListPlaySound1Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlaySound1" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#129a00"> <button onclick="xpressPlaySound1()">X</button> </div>
+                <div id="eventListPlaySound2Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlaySound2" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#129a00"> <button onclick="xpressPlaySound2()">X</button> </div>
+                <div id="eventListPlaySound3Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlaySound3" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#129a00"> <button onclick="xpressPlaySound3()">X</button> </div>
+                <div id="eventListPlaySound4Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlaySound4" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#129a00"> <button onclick="xpressPlaySound4()">X</button> </div>
+                <div id="eventListPlaySound5Dat" style="display: none;"> <a>Name Event:</a> <input type="text" id="dataNamePlaySound5" onclick="MenuAddE1()" readonly style="outline:none; cursor: pointer; border-radius: 30px;color:#129a00"> <button onclick="xpressPlaySound5()">X</button> </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <div class="MenuAdd" id="MenuAdd" style="display: none;">
+        <h1>Choose a type of event</h1>
+        <input id="totals" value="1" style="display: none;">
+        <button onclick="addMobEffect()">Add Mob Effect</button>
+        <button onclick="RemoveAddMobEffect()">Remove Mob Effect</button>
+        <button onclick="SpawLoot()">Spawn Loot</button>
+        <button onclick="SetBlock()">Set Block</button>
+        <button onclick="RunCommand()">Run Command</button>
+        <div class="MenuAdd2">
+            <button onclick="damage()">Damage</button>
+            <button onclick="DecrementStack()">Decrement Stack</button>
+            <button onclick="PlayEffect()">Play Effect</button>
+            <button onclick="PlaySound()">Play Sound</button>
+
+        </div>
+        <!--
+            Add Move Efect
+            ____________________________________________________________
+         -->
+        <div id="AddMobEffect1" class="ListsAdd" style="display: none;"> <a style="color:#00ff22 ;">Event Add mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventEff1"> <button id="x" onclick="xpressEff1()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeEff1"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <div> <a>Duration</a> <input id="DutaratioEff1" type="text" placeholder="8" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Amplifier</a> <input id="AmplifierEff1" type="text" placeholder="3" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <button onclick="addAddMobEffect1()">Add</button> </div>
+        </div>
+        <div id="AddMobEffect2" class="ListsAdd" style="display: none;"> <a style="color:#00ff22 ;">Event Add mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventEff2"> <button id="x" onclick="xpressEff2()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeEff2"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <div> <a>Duration</a> <input id="DutaratioEff2" type="text" placeholder="8" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Amplifier</a> <input id="AmplifierEff2" type="text" placeholder="3" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <button onclick="addAddMobEffect2()">Add</button> </div>
+        </div>
+        <div id="AddMobEffect3" class="ListsAdd" style="display: none;"> <a style="color:#00ff22 ;">Event Add mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventEff3"> <button id="x" onclick="xpressEff3()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeEff3"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <div> <a>Duration</a> <input id="DutaratioEff3" type="text" placeholder="8" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Amplifier</a> <input id="AmplifierEff3" type="text" placeholder="3" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <button onclick="addAddMobEffect3()">Add</button> </div>
+        </div>
+        <div id="AddMobEffect4" class="ListsAdd" style="display: none;"> <a style="color:#00ff22 ;">Event Add mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventEff4"> <button id="x" onclick="xpressEff4()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeEff4"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <div> <a>Duration</a> <input type="text" id="DutaratioEff4" placeholder="8" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Amplifier</a> <input id="AmplifierEff4" type="text" placeholder="3" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <button onclick="addAddMobEffect4()">Add</button> </div>
+        </div>
+        <div id="AddMobEffect5" class="ListsAdd" style="display: none;"> <a style="color:#00ff22 ;">Event Add mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventEff5"> <button id="x" onclick="xpressEff5()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeEff5"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <div> <a>Duration</a> <input id="DutaratioEff5" type="text" placeholder="8" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Amplifier</a> <input id="AmplifierEff5" type="text" placeholder="3" maxlength="9 " minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <button onclick="addAddMobEffect5()">Add</button> </div>
+        </div>
+
+
+        <!-- Remove Effect
+    ________________________________________________________________
+    -->
+
+        <div id="RemoveMobEffect1" class="ListsAdd" style="display: none;"> <a style="color:#ff6200 ;">Event Remove mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRemoveAddMobEffect1"> <button id="x" onclick="xpressRemoveAddMobEffect1()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeRemoveAddMobEffect1"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div> <button onclick="addRemoveAddMobEffect1()">Add</button> </div>
+        <div id="RemoveMobEffect2" class="ListsAdd" style="display: none;"> <a style="color:#ff6200 ;">Event Remove mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRemoveAddMobEffect2"> <button id="x" onclick="xpressRemoveAddMobEffect2()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeRemoveAddMobEffect2"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div> <button onclick="addRemoveAddMobEffect2()">Add</button> </div>
+        <div id="RemoveMobEffect3" class="ListsAdd" style="display: none;"> <a style="color:#ff6200 ;">Event Remove mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRemoveAddMobEffect3"> <button id="x" onclick="xpressRemoveAddMobEffect3()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeRemoveAddMobEffect3"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div> <button onclick="addRemoveAddMobEffect3()">Add</button> </div>
+        <div id="RemoveMobEffect4" class="ListsAdd" style="display: none;"> <a style="color:#ff6200 ;">Event Remove mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRemoveAddMobEffect4"> <button id="x" onclick="xpressRemoveAddMobEffect4()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeRemoveAddMobEffect4"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div> <button onclick="addRemoveAddMobEffect4()">Add</button> </div>
+        <div id="RemoveMobEffect5" class="ListsAdd" style="display: none;"> <a style="color:#ff6200 ;">Event Remove mob Effect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRemoveAddMobEffect5"> <button id="x" onclick="xpressRemoveAddMobEffect5()">X</button> </div>
+            <div> <a>EffectType</a> <input type="text" id="TypeRemoveAddMobEffect5"> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div> <button onclick="addRemoveAddMobEffect5()">Add</button> </div>
+        <!-- Remove Effect End
+    ________________________________________________________________
+      Spawn Loot     -->
+
+        <div id="spawnLoot1" class="ListsAdd" style="display: none;"> <a style="color:#fbff00 ;">Event Spawn Loot</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSpawnLoot1"> <button id="x" onclick="xpressSpawnLoot1()">X</button> </div>
+            <div> <a>Loot</a> <input type="text" id="TypeSpawnLoot1"> </div>
+            <button onclick="addSpawnLoot1()">Add</button> </div>
+
+        <div id="spawnLoot2" class="ListsAdd" style="display: none;"> <a style="color:#fbff00 ;">Event Spawn Loot</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSpawnLoot2"> <button id="x" onclick="xpressSpawnLoot2()">X</button> </div>
+            <div> <a>Loot</a> <input type="text" id="TypeSpawnLoot2"> </div>
+            <button onclick="addSpawnLoot2()">Add</button> </div>
+
+        <div id="spawnLoot3" class="ListsAdd" style="display: none;"> <a style="color:#fbff00 ;">Event Spawn Loot</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSpawnLoot3"> <button id="x" onclick="xpressSpawnLoot3()">X</button> </div>
+            <div> <a>Loot</a> <input type="text" id="TypeSpawnLoot3"> </div>
+            <button onclick="addSpawnLoot3()">Add</button> </div>
+
+        <div id="spawnLoot4" class="ListsAdd" style="display: none;"> <a style="color:#fbff00 ;">Event Spawn Loot</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSpawnLoot4"> <button id="x" onclick="xpressSpawnLoot4()">X</button> </div>
+            <div> <a>Loot</a> <input type="text" id="TypeSpawnLoot4"> </div>
+            <button onclick="addSpawnLoot4()">Add</button> </div>
+
+        <div id="spawnLoot5" class="ListsAdd" style="display: none;"> <a style="color:#fbff00 ;">Event Spawn Loot</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSpawnLoot5"> <button id="x" onclick="xpressSpawnLoot5()">X</button> </div>
+            <div> <a>Loot</a> <input type="text" id="TypeSpawnLoot5"> </div>
+            <button onclick="addSpawnLoot5()">Add</button> </div>
+        <!-- Spawn Loot End
+    ________________________________________________________________
+           Set Block-->
+        <div id="SetBlock1" class="ListsAdd" style="display: none;"> <a style="color:#00ffc3 ;">Event Set Block</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSetBlock1"> <button id="x" onclick="xpressSetBlock1()">X</button> </div>
+            <div> <input id="SetBlockidBlock1" type="text" placeholder="idemtifier" style="width:90px;"> <input type="text" id="TypeSetBlock1" placeholder="BlockName"> </div>
+            <button onclick="addSetBlock1()">Add</button> </div>
+
+        <div id="SetBlock2" class="ListsAdd" style="display: none;"> <a style="color:#00ffc3 ;">Event Set Block</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSetBlock2"> <button id="x" onclick="xpressSetBlock2()">X</button> </div>
+            <div> <input id="SetBlockidBlock2" type="text" placeholder="idemtifier" style="width:90px;"> <input type="text" id="TypeSetBlock2" placeholder="BlockName"> </div>
+            <button onclick="addSetBlock2()">Add</button> </div>
+
+        <div id="SetBlock3" class="ListsAdd" style="display: none;"> <a style="color:#00ffc3 ;">Event Set Block</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSetBlock3"> <button id="x" onclick="xpressSetBlock3()">X</button> </div>
+            <div> <input id="SetBlockidBlock3" type="text" placeholder="idemtifier" style="width:90px;"> <input type="text" id="TypeSetBlock3" placeholder="BlockName"> </div>
+            <button onclick="addSetBlock3()">Add</button> </div>
+
+        <div id="SetBlock4" class="ListsAdd" style="display: none;"> <a style="color:#00ffc3 ;">Event Set Block</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSetBlock4"> <button id="x" onclick="xpressSetBlock4()">X</button> </div>
+            <div> <input id="SetBlockidBlock4" type="text" placeholder="idemtifier" style="width:90px;"> <input type="text" id="TypeSetBlock4" placeholder="BlockName"> </div>
+            <button onclick="addSetBlock4()">Add</button> </div>
+
+        <div id="SetBlock5" class="ListsAdd" style="display: none;"> <a style="color:#00ffc3 ;">Event Set Block</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventSetBlock5"> <button id="x" onclick="xpressSetBlock5()">X</button> </div>
+            <div> <input id="SetBlockidBlock5" type="text" placeholder="idemtifier" style="width:90px;"> <input type="text" id="TypeSetBlock5" placeholder="BlockName"> </div>
+            <button onclick="addSetBlock5()">Add</button> </div>
+
+
+
+
+        <div id="RunCommand1" class="ListsAdd" style="display: none;"> <a style="color:#ff00ff ;">Event Run Command</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRunCommand1"> <button id="x" onclick="xpressRunCommand1()">X</button> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <div> <input type="text" id="TypeCommand1" placeholder="Command"> </div>
+            <button onclick="addRunCommand1()">Add</button> </div>
+
+        <div id="RunCommand2" class="ListsAdd" style="display: none;"> <a style="color:#ff00ff ;">Event Run Command</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRunCommand2"> <button id="x" onclick="xpressRunCommand2()">X</button> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <div> <input type="text" id="TypeCommand2" placeholder="Command"> </div>
+            <button onclick="addRunCommand2()">Add</button> </div>
+
+        <div id="RunCommand3" class="ListsAdd" style="display: none;"> <a style="color:#ff00ff ;">Event Run Command</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRunCommand3"> <button id="x" onclick="xpressRunCommand3()">X</button> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <div> <input type="text" id="TypeCommand3" placeholder="Command"> </div>
+            <button onclick="addRunCommand3()">Add</button> </div>
+
+        <div id="RunCommand4" class="ListsAdd" style="display: none;"> <a style="color:#ff00ff ;">Event Run Command</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRunCommand4"> <button id="x" onclick="xpressRunCommand4()">X</button> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <div> <input type="text" id="TypeCommand4" placeholder="Command"> </div>
+            <button onclick="addRunCommand4()">Add</button> </div>
+
+        <div id="RunCommand5" class="ListsAdd" style="display: none;"> <a style="color:#ff00ff ;">Event Run Command</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventRunCommand5"> <button id="x" onclick="xpressRunCommand5()">X</button> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <div> <input type="text" id="TypeCommand5" placeholder="Command"> </div>
+            <button onclick="addRunCommand5()">Add</button> </div>
+
+
+
+
+        <div id="damage1" class="ListsAdd" style="display: none;"> <a style="color:#e70b0b ;">Event Damage</a>
+            <div> <a>Type:</a> <input type="text" readonly placeholder="magic"> </div>
+            <div> <a>Name Event</a> <input type="text" id="NameEventdamage1"> <button id="x" onclick="xpressdamage1()">X</button> </div>
+            <div> <a>DamageCunt</a><input type="text" id="TypeDamage1" placeholder="3" minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <button onclick="adddamage1()">Add</button> </div>
+
+        <div id="damage2" class="ListsAdd" style="display: none;"> <a style="color:#e70b0b ;">Event Damage</a>
+            <div> <a>Type:</a> <input type="text" readonly placeholder="magic"> </div>
+            <div> <a>Name Event</a> <input type="text" id="NameEventdamage2"> <button id="x" onclick="xpressdamage2()">X</button> </div>
+            <div> <a>><input type="text" id="TypeDamage2" placeholder="3" minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+                <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <button onclick="adddamage2()">Add</button> </div>
+
+        <div id="damage3" class="ListsAdd" style="display: none;"> <a style="color:#e70b0b ;">Event Damage</a>
+            <div> <a>Type:</a> <input type="text" readonly placeholder="magic"> </div>
+            <div> <a>Name Event</a> <input type="text" id="NameEventdamage3"> <button id="x" onclick="xpressdamage3()">X</button> </div>
+            <div> <a>DamageCunt</a><input type="text" id="TypeDamage3" placeholder="3" minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <button onclick="adddamage3()">Add</button> </div>
+
+        <div id="damage4" class="ListsAdd" style="display: none;"> <a style="color:#e70b0b ;">Event Damage</a>
+            <div> <a>Type:</a> <input type="text" readonly placeholder="magic"> </div>
+            <div> <a>Name Event</a> <input type="text" id="NameEventdamage4"> <button id="x" onclick="xpressdamage4()">X</button> </div>
+            <div> <a>DamageCunt</a> <input type="text" id="TypeDamage4" placeholder="3" minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <button onclick="adddamage4()">Add</button> </div>
+
+        <div id="damage5" class="ListsAdd" style="display: none;"> <a style="color:#e70b0b ;">Event Damage</a>
+            <div> <a>Type:</a> <input type="text" readonly placeholder="magic"> </div>
+            <div> <a>Name Event</a> <input type="text" id="NameEventdamage5"> <button id="x" onclick="xpressdamage5()">X</button> </div>
+            <div> <a>DamageCunt</a><input type="text" id="TypeDamage5" placeholder="3" minlength="9 " required=" " oninput="securePhoneNumber(this) "> </div>
+            <div> <a>Target</a> <input type="text" readonly placeholder="other"> </div>
+            <button onclick="adddamage5()">Add</button> </div>
+
+        <div id="DecrementStack1" class="ListsAdd" style="display: none;"> <a style="color:#00b7ff ;">Event Decrement Stack</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventDecrementStack1"> <button id="x" onclick="xpressDecrementStack1()">X</button> </div>
+            <div> <input type="text" readonly placeholder="DecrementStack"> </div>
+            <button onclick="addDecrementStack1()">Add</button> </div>
+
+        <div id="DecrementStack2" class="ListsAdd" style="display: none;"> <a style="color:#00b7ff ;">Event Decrement Stack</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventDecrementStack2"> <button id="x" onclick="xpressDecrementStack2()">X</button> </div>
+            <div> <input type="text" readonly placeholder="DecrementStack"> </div>
+            <button onclick="addDecrementStack2()">Add</button> </div>
+
+        <div id="DecrementStack3" class="ListsAdd" style="display: none;"> <a style="color:#00b7ff ;">Event Decrement Stack</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventDecrementStack3"> <button id="x" onclick="xpressDecrementStack3()">X</button> </div>
+            <div> <input type="text" readonly placeholder="DecrementStack"> </div>
+            <button onclick="addDecrementStack3()">Add</button> </div>
+
+        <div id="DecrementStack4" class="ListsAdd" style="display: none;"> <a style="color:#00b7ff ;">Event Decrement Stack</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventDecrementStack4"> <button id="x" onclick="xpressDecrementStack4()">X</button> </div>
+            <div> <input type="text" readonly placeholder="DecrementStack"> </div>
+            <button onclick="addDecrementStack4()">Add</button> </div>
+
+        <div id="DecrementStack5" class="ListsAdd" style="display: none;"> <a style="color:#00b7ff ;">Event Decrement Stack</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventDecrementStack5"> <button id="x" onclick="xpressDecrementStack5()">X</button> </div>
+            <div> <input type="text" readonly placeholder="DecrementStack"> </div>
+            <button onclick="addDecrementStack5()">Add</button> </div>
+
+
+        <div id="PlayEffect1" class="ListsAdd" style="display: none;"> <a style="color:#9500ff ;">Event PlayEffect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlayEffect1"> <button id="x" onclick="xpressPlayEffect1()">X</button> </div>
+            <div> <a>Particle:</a><input type="text" id="TypePlayEffect1" placeholder="minecraft:particle"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlayEffect1()">Add</button> </div>
+
+        <div id="PlayEffect2" class="ListsAdd" style="display: none;"> <a style="color:#9500ff ;">Event PlayEffect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlayEffect2"> <button id="x" onclick="xpressPlayEffect2()">X</button> </div>
+            <div> <a>Particle:</a><input type="text" id="TypePlayEffect2" placeholder="minecraft:particle"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlayEffect2()">Add</button> </div>
+
+        <div id="PlayEffect3" class="ListsAdd" style="display: none;"> <a style="color:#9500ff ;">Event PlayEffect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlayEffect3"> <button id="x" onclick="xpressPlayEffect3()">X</button> </div>
+            <div> <a>Particle:</a><input type="text" id="TypePlayEffect3" placeholder="minecraft:particle"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlayEffect3()">Add</button> </div>
+
+        <div id="PlayEffect4" class="ListsAdd" style="display: none;"> <a style="color:#9500ff ;">Event Run PlayEffect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlayEffect4"> <button id="x" onclick="xpressPlayEffect4()">X</button> </div>
+            <div><a>Particle:</a> <input type="text" id="TypePlayEffect4" placeholder="minecraft:particle"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlayEffect4()">Add</button> </div>
+
+        <div id="PlayEffect5" class="ListsAdd" style="display: none;"> <a style="color:#9500ff ;">Event PlayEffect</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlayEffect5"> <button id="x" onclick="xpressPlayEffect5()">X</button> </div>
+            <div><a>Particle:</a> <input type="text" id="TypePlayEffect5" placeholder="minecraft:particle"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlayEffect5()">Add</button> </div>
+
+
+
+
+        <div id="PlaySound1" class="ListsAdd" style="display: none;"> <a style="color:#129a00 ;">Event PlaySound</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlaySound1"> <button id="x" onclick="xpressPlaySound1()">X</button> </div>
+            <div> <a>Sound:</a><input type="text" id="TypePlaySound1" placeholder="mob.enderman.death"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlaySound1()">Add</button> </div>
+
+        <div id="PlaySound2" class="ListsAdd" style="display: none;"> <a style="color:#129a00 ;">Event PlaySound</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlaySound2"> <button id="x" onclick="xpressPlaySound2()">X</button> </div>
+            <div> <a>Sound:</a><input type="text" id="TypePlaySound2" placeholder="mob.enderman.death"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlaySound2()">Add</button> </div>
+
+        <div id="PlaySound3" class="ListsAdd" style="display: none;"> <a style="color:#129a00 ;">Event PlaySound</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlaySound3"> <button id="x" onclick="xpressPlaySound3()">X</button> </div>
+            <div> <a>Sound:</a><input type="text" id="TypePlaySound3" placeholder="mob.enderman.death"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlaySound3()">Add</button> </div>
+
+        <div id="PlaySound4" class="ListsAdd" style="display: none;"> <a style="color:#129a00 ;">Event Run PlaySound</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlaySound4"> <button id="x" onclick="xpressPlaySound4()">X</button> </div>
+            <div><a>Sound:</a> <input type="text" id="TypePlaySound4" placeholder="mob.enderman.death"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlaySound4()">Add</button> </div>
+
+        <div id="PlaySound5" class="ListsAdd" style="display: none;"> <a style="color:#129a00 ;">Event PlaySound</a>
+            <div> <a>Name Event</a> <input type="text" id="NameEventPlaySound5"> <button id="x" onclick="xpressPlaySound5()">X</button> </div>
+            <div><a>Sound:</a> <input type="text" id="TypePlaySound5" placeholder="mob.enderman.death"> </div>
+            <div> <a>Target</a><input type="text" readonly placeholder="self"> </div>
+            <button onclick="addPlaySound5()">Add</button> </div>
+
+
+        <a>Here you can choose the type of event you want to use for your block.></a>
+        <div> <a> If you find an error in the generation of the code,</a></div>
+
+        <a>let us know so we can fix it.</a>
+        <input type="button" class="exit" value="<<<<--------" onclick="MenuAddE()">
+    </div>
+
+    <a id="menue" class="menue" style="display: none;"></a>
+    <div class="buttonPosition">
+        <input type="checkbox" id="btn-menu" onclick="menu()">
+        <label for="btn-menu" class="lbl-menu">
+            <span id="spn1"></span>
+            <span id="spn2"></span>
+            <span id="spn3"></span>
+        </label>
+    </div>
+    <a id="buttonMenu " class="buttonMenue " onclick="menu() "></a>
+    </div>
+    <script src="/GeneratorBlockCode/index.js "></script>
+
+
+    <style>
+        @font-face {
+            font-family: minecraft;
+            font-style: normal;
+            font-weight: 400;
+            src: local('Minecraft'), url(/font/MinecraftTen-VGORe.woff) format('woff')
+        }
+        
+        @font-face {
+            font-family: normal-minecraft;
+            src: url(/font/Mojangles.ttf);
+        }
+        
+        * {
+            caret-color: rgb(251, 0, 255);
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: #181921;
+        }
+        
+        h1 {
+            color: #cfcfcf;
+            text-shadow: 0px 3px 26px rgba(255, 216, 119, 0.68);
+            font-family: 'Minecraft', sans-serif;
+        }
+        
+        a {
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 3px 26px rgba(255, 255, 255, 0.78);
+            font-family: normal-minecraft;
+        }
+        
+        textarea {
+            border: 0;
+            resize: none;
+            background-color: rgba(0, 21, 92, 0.346);
+            color: aliceblue;
+            border: 2px;
+            outline: none;
+            border-color: #00ff2200;
+            text-rendering: auto;
+            border-radius: 3%;
+            font-family: 'normal-minecraft';
+            text-shadow: 0px 3px 26px rgba(255, 255, 255, 0.534);
+        }
+        
+        select {
+            font-family: normal-minecraft;
+        }
+        
+        input {
+            background-color: #000000;
+            border-color: #070707;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            font-family: normal-minecraft;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+    </style>
+</body>
+
+</html>
