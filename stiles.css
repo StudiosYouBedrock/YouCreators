@@ -338,6 +338,7 @@ input {
     scroll-behavior: auto;
     scroll-behavior: smooth;
 }
+
 @media(max-width: 600px) {
     .data {
         width: 400px;
