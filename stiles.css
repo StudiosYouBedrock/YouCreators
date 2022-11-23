@@ -348,11 +348,12 @@ input {
     .TitleBl {
         position: absolute;
         top: 60px;
-        left: 5px;
+        left: 0px;
         transform: scale( 0.9);
     }
     .result {
         margin: 1px;
+        padding: 1px;
         margin-top: 5px;
         margin-block-end: 100px;
         width: 420px;
@@ -371,12 +372,12 @@ input {
     }
     .generator {
         margin-top: 5px;
-        top: 540px;
+        top: 490px;
         left: 20px;
     }
     .export {
         margin-top: 5px;
-        top: 540px;
+        top: 490px;
         left: 170px;
     }
 }
