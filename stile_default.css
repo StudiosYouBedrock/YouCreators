@@ -1,0 +1,180 @@
+@font-face {
+    font-family: minecraft;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Minecraft'), url(/font/MinecraftTen-VGORe.woff) format('woff')
+}
+
+@font-face {
+    font-family: normal-minecraft;
+    src: url(/font/Mojangles.ttf);
+}
+
+* {
+    caret-color: rgb(251, 0, 255);
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #05106b;
+}
+
+h1 {
+    color: #cfcfcf;
+    font-family: 'Minecraft', sans-serif;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    font-family: normal-minecraft;
+}
+
+textarea {
+    border: 0;
+    resize: none;
+    background-color: #002bb98a;
+    color: aliceblue;
+    border: 2px;
+    outline: none;
+    border-color: #00ff2200;
+    text-rendering: auto;
+    font-family: 'normal-minecraft';
+}
+
+select {
+    background-color: #0026a18a;
+    border-color: #002bb98a;
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-family: normal-minecraft;
+}
+
+code {
+    background-color: rgb(0, 20, 77);
+}
+
+input {
+    background-color: #0026a18a;
+    border-color: #002bb98a;
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 170px;
+    font-family: normal-minecraft;
+    border: 1px solid #001f868a;
+    outline: #002ec788 solid 1px;
+}
+
+button {
+    color: #ffffff;
+    background-color: #0026a18a;
+    border-width: 5px;
+    border-color: #002bb98a;
+    cursor: pointer;
+}
+
+
+/*Menu-------------------------------------------------------------------------------------*/
+
+
+/**/
+
+.h1Hover:hover {
+    transition: 400ms;
+    text-transform: lowercase;
+    transform: scale(1.1);
+}
+
+.menue {
+    position: fixed;
+    top: 0px;
+    width: 340px;
+    height: 600px;
+    background-color: #001e81c2;
+}
+
+.menue>div {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+
+.menuFixed {
+    position: fixed;
+    top: 0px;
+    width: 1380px;
+    height: 60px;
+    background-color: #00259ec2;
+}
+
+.imgFixed {
+    position: absolute;
+    width: 115px;
+    height: 39px;
+    left: 50px;
+    margin: 6px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.buttonPosition {
+    position: fixed;
+    margin: 4px;
+    top: 20px;
+    left: 10px;
+}
+
+
+/**/
+
+.lbl-menu {
+    width: 90px;
+    height: 80px;
+    position: relative;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.lbl-menu #spn1,
+#spn2,
+#spn3 {
+    position: absolute;
+    content: '';
+    background-color: #a4bbff;
+    z-index: 1;
+    width: 40px;
+    height: 5px;
+    transition: all 400ms ease;
+}
+
+#spn1 {
+    top: 0px;
+}
+
+#spn2 {
+    top: 12px;
+}
+
+#spn3 {
+    top: 23px;
+}
+
+#btn-menu {
+    display: none;
+}
+
+#btn-menu:checked~.lbl-menu #spn1 {
+    transform: rotate(140deg);
+    top: 10px;
+}
+
+#btn-menu:checked~.lbl-menu #spn2 {
+    opacity: 0;
+}
+
+#btn-menu:checked~.lbl-menu #spn3 {
+    transform: rotate(-140deg);
+    top: 10px;
+}
