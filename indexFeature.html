@@ -16,15 +16,47 @@
 
     <div id="index">
         <div><textarea id="ResultFeature" class="resultfeature" cols="70 " rows="20 " readonly placeholder="data Feature "></textarea></div>
-        <button class="generator " onclick="dat() ">Generate</button>
+        <div><button class="generator " onclick="dat() ">Generate</button></div>
+        <div class="data">
+            <div> <a>Tipo de Feature</a><select>
+    <option value="" onclick="aggregate()">aggregate_feature</option>
+    <option value="">sequence_feature</option>
+    <option value="">ore_feature</option>
+    <option value="">scatter_feature</option>
+    <option value="">search_feature</option>
+    <option value="">single_block_feature</option>
+    <option value="">structure_template_feature</option>
+    <option value="">tree_feature</option>
+    <option value="">weighted_random_feature</option>
+</select></div>
+            <div id="aggregateDat">
+                <h1>Aggregate</h1>
+                <div>
+                    </a><input type="text" placeholder="nombre"></div>
+                <div>
+                    <h1 style="transform: scale(0.9);">Features</h1>
+                </div>
+                <div><button>Agregar</button></div>
+                <div class="id">
+                    <div><input type="text" placeholder="Nombre del feature" id="Aggregate1"><button>✖</button></div>
+                    <div><input type="text" placeholder="Nombre del feature" id="Aggregate2"><button>✖</button></div>
+                    <div><input type="text" placeholder="Nombre del feature" id="Aggregate3"><button>✖</button></div>
+                    <div><input type="text" placeholder="Nombre del feature" id="Aggregate4"><button>✖</button></div>
+                    <div><input type="text" placeholder="Nombre del feature" id="Aggregate5"><button>✖</button></div>
+                </div>
 
 
+
+            </div>
+
+
+
+        </div>
         <div id="menue" class="menue" style="display: none;">
             <div>
                 <a href="index.html">
                     <h1 style="font-family: 'Minecraft', sans-serif;">Inicio↗</h1>
                 </a>
-
                 <a href="indexBlock.html">
                     <h1 style="font-family: 'Minecraft', sans-serif;">Block Generator↗</h1>
                 </a>

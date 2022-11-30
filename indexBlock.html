@@ -45,7 +45,7 @@
             
             <div > <a>Loot:</a> <input id="loots" type="text " placeholder="loot_tables/blocks/blocky.json " style="width:300px; "> </div>
             <div > <a>Destroy Time:</a> <input id="Time" type="text " placeholder="1.0 " maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
-            <div > <a>Explosion Resistance:</a> <input id="Explosive" type="text " placeholder="4" maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
+            <div > <a>Explosion Resistance:</a> <input id="Explosive"  type="number" min="0" max="1000" value="0" placeholder="4" maxlength="9" minlength="9" required="" oninput="securePhoneNumber(this)"> </div>
             <div><a>Immovable</a><button  onclick="immovable()"><a id="check1imm" style="display:none; color: #17cd07;    ">✔</a> <a id="check2imm" style="color: #03002100;">  ✔</a></button></div>
                 <div><a>Breakonpush</a><button onclick="breakonpush()"><a id="check1brepush" style="display:none; color: #17cd07;    ">✔</a> <a id="check2brepush" style="color: #03002100;">  ✔</a></button></div>
                 <div><a>Onlypistonpush</a><button onclick="onlypistonpush()"><a id="check1onlypispush" style="color: #17cd07;    ">✔</a> <a id="check2onlypispush" style="display:none;color: #03002100;">  ✔</a></button></div>

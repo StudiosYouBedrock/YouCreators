@@ -1,10 +1,5 @@
 /*Menu-------------------------------------------------------------------------------------*/
 
-input {
-    border: 1px solid #001f868a;
-    outline: #002ec788 solid 1px;
-}
-
 .Inicio {
     align-self: flex-start;
 }
@@ -60,6 +55,7 @@ input {
 
 .ListsAdd {
     background-color: #001f868a;
+    width: auto;
 }
 
 .a1,
@@ -372,8 +368,8 @@ input {
         width: 700px;
     }
     .end {
-        width: 380px;
-        left: 10px;
+        width: 340px;
+        left: 0px;
     }
     .end>div {
         transform: scale(0.9);
@@ -389,17 +385,18 @@ input {
         margin-block-end: 100px;
         transform: scale(0.62);
         top: 20px;
-        left: -80px;
+        left: -70px;
     }
     .eventList {
         padding: 1px;
         transform: scale(0.8);
     }
     .eventList>div {
-        background-color: #11121B;
-        padding: 1px;
-        width: 370px;
-        border-radius: 50px;
+        background-color: #001f868a;
+        padding: 10px;
+        width: 300px;
+        height: 20px;
+        border-radius: 5px;
     }
     .generator {
         margin-top: 5px;

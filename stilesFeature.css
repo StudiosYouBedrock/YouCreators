@@ -20,6 +20,23 @@
     left: 350px;
 }
 
+.data {
+    position: relative;
+    padding-top: 10px;
+    width: 590px;
+    left: 460px;
+    top: 620px;
+    transform: scale(1.1);
+}
+
+.id>div {
+    padding: 5px;
+}
+
+.data>div {
+    padding: 12px;
+}
+
 .generator {
     top: 550px;
     left: 420px;
@@ -82,7 +99,7 @@
         margin-block-end: 100px;
         transform: scale(0.62);
         top: 20px;
-        left: -130px;
+        left: -80px;
     }
     .eventList {
         padding: 1px;

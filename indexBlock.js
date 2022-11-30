@@ -702,9 +702,7 @@ function dat() {
             if (Time.value == 0) {
                 Time.value = `1.0`
             };
-            if (Explosive.value == 0) {
-                Explosive.value = `4`
-            };
+
             if (Absorption.value == 0) {
                 Absorption.value = `0`
             };
