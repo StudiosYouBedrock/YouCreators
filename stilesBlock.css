@@ -470,7 +470,10 @@ input::placeholder {
     color: #ffffff;
     font-family: minecraft;
 }
-
+.generate:active {
+    background: url(assets/button-texture/button_generate_hover.png);
+    background-repeat: no-repeat;
+}
 .generate:hover {
     background: url(assets/button-texture/button_generate_hover.png);
     background-repeat: no-repeat;
