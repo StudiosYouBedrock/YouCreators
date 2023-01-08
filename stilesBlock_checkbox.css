@@ -1,0 +1,43 @@
+[type=checkbox] {
+    display: none;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    transition: 400ms;
+    transform: rotate(360deg);
+}
+
+[type=checkbox]:hover {
+    transform: rotate(350deg);
+}
+
+[type=checkbox]:checked:hover {
+    transform: rotate(350deg);
+}
+
+#toggle_creative_menu {
+    position: absolute;
+    background-image: url(assets/button-texture/toggle_off.png);
+    background-repeat: no-repeat;
+    top: 15px;
+    left: 900px;
+    width: 60px;
+    height: 32px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#toggle_creative_menu:hover {
+    background-image: url(assets/button-texture/toggle_off_hover.png);
+    background-repeat: no-repeat;
+}
+
+#bt_creative_menu:checked~label>#toggle_creative_menu {
+    background-image: url(assets/button-texture/toggle_on.png);
+    background-repeat: no-repeat;
+}
+
+#bt_creative_menu:checked~label>#toggle_creative_menu:hover {
+    background-image: url(assets/button-texture/toggle_on_hover.png);
+    background-repeat: no-repeat;
+}
